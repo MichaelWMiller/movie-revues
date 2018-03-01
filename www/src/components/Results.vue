@@ -13,39 +13,37 @@
 </template>
 
 <script>
-  import Details from './Details'
-  export default {
-    name: 'results',
-    data(){
-      return {
+    import Detailz from './Detailz'
+    export default {
+        name: 'results',
+        data() {
+            return {
 
-      }
-    },
-    computed: {
-      movies(){
-        return this.$store.state.searchResults
-      },
-      activeMovie(){
-        return this.$store.state.activeMovie
-      }
-    },
-    methods: {
-      showDetails(movie){
-        this.$store.dispatch('setActiveMovie', movie)
-      }
-    },
-    components: {
-      detailz: Details
-    },
-    props: ['title']
-  }
-
+            }
+        },
+        computed: {
+            movies() {
+                return this.$store.state.searchResults
+            },
+            activeMovie() {
+                return this.$store.state.activeMovie
+            }
+        },
+        methods: {
+            showDetails(movie) {
+                this.$store.dispatch('setActiveMovie', movie)
+            }
+        },
+        components: {
+            detailz: Detailz
+        },
+        props: ['title']
+    }
 </script>
 
 <style scoped>
-  .results {
-    background-color: aqua;
-    text-align: left;
-  }
-
+    .results {
+        background-color: aqua;
+        text-align: left;
+    }
 </style>
