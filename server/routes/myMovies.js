@@ -22,8 +22,10 @@ router.get("/api/mymovies/:title", (req, res, next) => {
 
 // CREATE A MOVIE
 router.post("/api/mymovies", (req, res, next) => {
+    console.log(req.body)
     Movies.create(req.body)
-        .then(movie => {
+
+    .then(movie => {
             return res.send(movie);
         })
         .catch(next);

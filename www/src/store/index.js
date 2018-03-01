@@ -22,7 +22,6 @@ export default new vuex.Store({
         },
         searchResults: [],
         activeMovie: {},
-
     },
     mutations: {
         addResults(state, payload) {
@@ -66,7 +65,7 @@ export default new vuex.Store({
         },
         addToMine({ commit, dispatch }, payload) {
             myMovieDB
-                .post(payload)
+                .post("", payload)
                 .then(res => {
                     dispatch("getAllMyMovies", res.data)
                 })

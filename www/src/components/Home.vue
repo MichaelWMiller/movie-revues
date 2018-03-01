@@ -9,7 +9,7 @@
                 </div>
             <div class="col-sm-6">
                 <form class="col-sm-12" @submit.prevent='myMovieSearch'>
-                    <input type="text" v-model="title" placeholder="Movie Title">
+                    <input type="text" v-model="myTitle" placeholder="Movie Title">
                     <button type="submit">Search My Movies</button>
                 </form>
             </div>
@@ -29,7 +29,8 @@
         name: 'Home',
         data() {
             return {
-                title: ''
+                title: '',
+                myTitle: ''
             }
         },
         methods: {
@@ -37,7 +38,7 @@
                 this.$store.dispatch('getMovies', this.title)
             },
             myMovieSearch() {
-                this.$store.dispatch('getMyMovies', this.title)
+                this.$store.dispatch('getMyMovies', this.myTitle)
             }
         },
         components: {
